@@ -3,14 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js Animation Test</title>
+    <title>Dev Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #21262d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #F9F6EE;  
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d1117, #1f2933);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            color: var(--accent);
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+            margin: 0 0 1rem 0;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .project-link:hover {
+            background-color: #6a686e;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 1.25rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <script type="module" src="script.js"></script>
+    <div class="container">
+        <header>
+            <h1>Jussi Kärkkäinen</h1>
+        </header>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="/docs/lltools_new.gif" alt="" class="project-image">
+                <h2 class="project-title">NetRunner</h2>
+                <p class="project-description">
+                    A web-application to allow LLMs to complete tasks with basic tool use. Also implements a Reinforcement Learning
+                    environment to train agents to use a web browser.
+                </p>
+                <a href="https://github.com/JussiKarkkainen/NetRunner" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <img src="/docs/model.png" alt="" class="project-image">
+                <h2 class="project-title">AI-lib</h2>
+                <p class="project-description">
+                   A minimal deep learning library to train Neural Networks with automatic differentiation. 
+                </p>
+                <a href="https://github.com/JussiKarkkainen/AI-lib" class="project-link">View on GitHub →</a>
+            </div>
+
+        <footer>
+            <p>© 2024 Jussi Kärkkäinen | juskark@gmail.com | <a href="github.com/JussiKarkkainen">Github</a></p>
+        </footer>
+    </div>
 </body>
 </html>
 
